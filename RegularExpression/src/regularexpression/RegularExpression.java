@@ -11,12 +11,15 @@ public class RegularExpression {
     public static void main(String[] args) {
         Scanner in= new Scanner(System.in);
         System.out.println("Enter Your Regular Expression");
-        //generating randome strings that matche with given RE
         String regex=in.nextLine();
         //[0-3]([a-c]|[e-g]{1,2})
+        //generating randome strings that matche with given RE
         Generex generex = new Generex(regex);
-        for (int i = 0; i < 10; i++) {
-            System.out.println(generex.random());
+        int i=0;
+        Iterator iterator = generex.iterator();
+		while (iterator.hasNext()&&i<10) {
+			System.out.print(iterator.next() + " ");
+                        i++;
 		}
         //taking a string and check matching
         System.out.println("Enter Your String to Check Maching");
